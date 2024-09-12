@@ -69,6 +69,11 @@ public class Main {
         in.close();
     }
 
+    private static void contactsWithSameNumber(ContactBook cBook) {
+        if(cBook.thereIsTwoEqualNumbers()) System.out.println("There are contacts that share phone numbers.");
+        else System.out.println("All contacts have different phone numbers");
+    }
+
     private static String getNameByPhone(Scanner in, ContactBook cBook){
         int input;
 
