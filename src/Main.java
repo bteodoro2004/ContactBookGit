@@ -69,19 +69,23 @@ public class Main {
         in.close();
     }
 
-    private static String getNameByPhone(Scanner in, ContactBook cBook){
-        int input;
-
-        input = in.nextInt();
-
-        return cBook.getNameByPhone(input);
-    }
-
     private static String getCommand(Scanner in) {
         String input;
 
         input = in.nextLine().toUpperCase();
         return input;
+    }
+
+    private static void getNameByPhone(Scanner in, ContactBook cBook){
+        int input;
+
+        input = in.nextInt();
+
+        if(cBook.getNameByPhone(input) == NULL){
+            System.out.println("Phone number does not exist.");
+        }else{
+            System.out.println(cBook.getNameByPhone(input));
+        }
     }
 
     private static void addContact(Scanner in, ContactBook cBook) {
