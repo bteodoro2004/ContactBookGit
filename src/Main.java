@@ -14,6 +14,7 @@ public class Main {
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
     public static final String QUIT           = "Q";
+    public static final String GET_NAME           = "GN";
 
     //Constantes que definem as mensagens para o utilizador
     public static final String CONTACT_EXISTS = "contactBook.Contact already exists.";
@@ -53,6 +54,10 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case GET_NAME:
+                    getNameByPhone(in, cBook);
+                case EP_COMMAND:
+                    contactsWithSameNumber(cBook);
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -62,6 +67,14 @@ public class Main {
         System.out.println(QUIT_MSG);
         System.out.println();
         in.close();
+    }
+
+    private static String getNameByPhone(Scanner in, ContactBook cBook){
+        int input;
+
+        input = in.nextInt();
+
+        return cBook.getNameByPhone(input);
     }
 
     private static String getCommand(Scanner in) {
