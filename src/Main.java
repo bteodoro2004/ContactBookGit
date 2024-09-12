@@ -56,8 +56,6 @@ public class Main {
                     break;
                 case GET_NAME:
                     getNameByPhone(in, cBook);
-                case EP_COMMAND:
-                    contactsWithSameNumber(cBook);
                 default:
                     System.out.println(COMMAND_ERROR);
             }
