@@ -79,7 +79,7 @@ public class Main {
 
         input = in.nextInt();
 
-        if(cBook.getNameByPhone(input) == NULL){
+        if(cBook.getNameByPhone(input) == null){
             System.out.println("Phone number does not exist.");
         }else{
             System.out.println(cBook.getNameByPhone(input));
