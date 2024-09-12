@@ -77,12 +77,17 @@ public class Main {
         else System.out.println("All contacts have different phone numbers.");
     }
 
-    private static String getNameByPhone(Scanner in, ContactBook cBook){
+    private static void getNameByPhone(Scanner in, ContactBook cBook){
         int input;
 
         input = in.nextInt();
+        in.nextLine();
 
-        return cBook.getNameByPhone(input);
+        if(cBook.getNameByPhone(input) == null){
+            System.out.println("Phone number does not exist.");
+        }else{
+            System.out.println(cBook.getNameByPhone(input));
+        }
     }
 
     private static String getCommand(Scanner in) {
