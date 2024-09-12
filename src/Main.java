@@ -13,6 +13,7 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
+    public static final String EP_COMMAND = "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -64,6 +65,8 @@ public class Main {
         in.close();
     }
 
+
+
     private static String getCommand(Scanner in) {
         String input;
 
@@ -111,6 +114,11 @@ public class Main {
             System.out.println(cBook.getEmail(name));
         }
         else System.out.println(NAME_NOT_EXIST);
+    }
+
+    private static String contactsWithSameNumber(ContactBook cBook){
+        if(cBook.thereIsTwoEqualNumbers) System.out.println("There are contacts that share phone numbers.");
+        else System.out.println("All contacts have different phone numbers");
     }
 
     private static void setPhone(Scanner in, ContactBook cBook) {

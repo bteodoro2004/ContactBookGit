@@ -5,6 +5,7 @@ import contactBook.Contact;
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
+
     private int counter;
     private Contact[] contacts;
     private int currentContact;
@@ -38,6 +39,17 @@ public class ContactBook {
         for(int i=index; i<counter; i++)
             contacts[i] = contacts[i+1];
         counter--;
+    }
+
+    public boolean thereIsTwoEqualNumbers(){
+        int x = 0;
+        for(int i = 0; i < counter; i++){
+            for(int j = 0; j < counter; j++){
+                if (contacts[i].getPhone() == contacts[j].getPhone())
+                    x++;
+            }
+        }
+        return x > 0;
     }
 
     //Pre: name != null && hasContact(name)
