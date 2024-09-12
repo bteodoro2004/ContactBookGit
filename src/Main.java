@@ -57,8 +57,10 @@ public class Main {
                     break;
                 case GET_NAME:
                     getNameByPhone(in, cBook);
+                    break;
                 case EP_COMMAND:
                     contactsWithSameNumber(cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
